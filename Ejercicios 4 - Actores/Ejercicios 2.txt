@@ -1,0 +1,36 @@
+7. Ciudades que empiezan por 'a'.
+
+select*
+from city
+where upper(city) like 'a%';
+
+8. Ciudades que acaban por 's'.
+
+select*
+from city
+where upper(city) like '%s';
+
+9. Ciudades del country 61.
+
+select*
+from city
+where country_id = 61;
+
+10. Ciudades del country 'Spain'.
+
+1-select *
+  from city 
+  where country_id = (select country_id 
+			from country 
+                    	where upper(country)='spain');
+
+2- select c.city, p.country
+   from city c, country p
+   where c.country_id=p.country_id 
+   and upper(p.country) = 'spain';
+
+11. Ciudades con nombres compuestos.
+
+select city
+from city
+where city like '% %';

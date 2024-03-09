@@ -1,0 +1,37 @@
+18. ¿Cuantos actores hay?
+
+select count(*) as 'Numero de actores'
+from actor;
+
+19. ¿Cuantas ciudades tiene el country 'Spain'?
+
+select count(*) as 'Ciudades de Spain' 
+from city 
+where country_id= (select country_id from country where country = 'Spain');
+
+20. ¿Cuantos countries hay que empiezan por 'a'?
+
+select count(*) as 'Countrys' 
+from country 
+where lower(country) like 'a%'
+
+21. Media de duración de peliculas con PG.
+
+select avg(length) as 'media_duracion' 
+from film 
+where lower(rating)='pg';
+
+22. Suma de rental_rate de todas las peliculas.
+
+select sum(rental_rate) as 'suma_rental_rate'
+from film;
+
+23. Pelicula con mayor duración.
+
+select max(length) as 'Mayor Duracion'
+from film;
+
+24. Pelicula con menor duración.
+
+select min(length) as 'Menor Duracion'
+from film;

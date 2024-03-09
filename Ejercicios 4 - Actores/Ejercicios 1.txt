@@ -1,0 +1,35 @@
+1. Actores que tienen de primer nombre 'Scarlett'.
+
+select *
+from actor
+where upper(first_name)=  'scarlett';
+
+2. Actores que tienen de apellido 'Johansson'.
+
+select* 
+from actor
+where upper(last_name)= 'johansson';
+
+3. Actores que contengan una 'O' en su nombre.
+
+select* 
+from actor
+where upper(first_name) like '%o%';
+
+4. Actores que contengan una 'O' en su nombre y en una 'A' en su apellido.
+
+select* 
+from actor
+where upper(first_name) like '%o%' and upper(last_name) like '%a';
+
+5. Actores que contengan dos 'O' en su nombre y una 'A' en su apellido.
+
+select* 
+from actor
+where upper(first_name) like '%o%o%' and upper(last_name) like '%a%';
+
+6. Actores donde su tercera letra sea 'B' en el nombre.
+
+select* 
+from actor
+where upper(first_name) like '__b%';

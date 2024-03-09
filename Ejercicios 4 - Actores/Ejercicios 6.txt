@@ -1,0 +1,20 @@
+30. Numero de peliculas de cada rating.
+
+select rating, count(*) as 'peliculas'
+from film
+group by rating;
+
+31. Cuantas peliculas ha realizado el actor ED CHASE.
+
+select a.first_name, a.last_name ,count(*) as 'num_peliculas'
+from actor a, film_actor fa, film f
+where a.actor_id=fa.actor_id and fa.film_id = f.film_id
+and lower(a.first_name) ='ed' and lower(a.last_name)='chase'
+group by a.first_name, a.last_name;
+
+32. Media de duracion de las peliculas por cada categoria.
+
+select c.name as 'categoria', avg(f.length) as 'media_duracion'
+from film f, film_category fc, category c
+where f.film_id=fc.film_id and fc.category_id = c.category_id
+group by c.name;
